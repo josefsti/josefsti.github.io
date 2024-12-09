@@ -6,14 +6,14 @@ html, body {
 
 @font-face {
     font-family: 'Cubano';
-    src: url('./cubano.ttf') format('truetype'); /* Specify the path and format for Cubano */
+    src: url('../cubano.ttf') format('truetype'); /* Specify the path and format for Cubano */
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ProximaNova';
-    src: url('./ProximaNova-Regular.otf') format('opentype'); /* Specify the path and format for ProximaNova */
+    src: url('../ProximaNova-Regular.otf') format('opentype'); /* Specify the path and format for ProximaNova */
     font-weight: normal;
     font-style: normal;
 }
