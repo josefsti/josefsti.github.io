@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illustrations - Art of Joarts</title>
+    <link rel="stylesheet" href="css2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img src="pfp.jpg" alt="Profile Picture">
+        <b>JOARTS</b>
+        <a href="page1.html">Home</a>
+        <a href="page2.html">Illustrations</a>
+        <a href="page3.html">Sketch Dump</a>
+
+        <div class="social-media">
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+        <a1>Personal</a1> 
+        <desc>Personal work done either purely for myself or for my social media.</desc>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="art1.png" alt="Artwork 1" onclick="openModal('art1.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="art2.png" alt="Artwork 2" onclick="openModal('art2.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="art3.png" alt="Artwork 3" onclick="openModal('art3.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="art4.png" alt="Artwork 4" onclick="openModal('art4.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="art5.png" alt="Artwork 5" onclick="openModal('art5.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="art6.png" alt="Artwork 6" onclick="openModal('art6.png')" />
+            </div>
+            <!-- More art items -->
+        </div>
+    </div>
+    
+        <a1>Album Arts</a1>
+        <desc>Select work for music artist commissions.</desc>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="albumart1.png" alt="Album Art 1" onclick="openModal('albumart1.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="albumart2.png" alt="Album Art 2" onclick="openModal('albumart2.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="albumart3.png" alt="Album Art 3" onclick="openModal('albumart3.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="albumart4.png" alt="Album Art 4" onclick="openModal('albumart4.png')" />
+            </div>
+            <!-- More album art items -->
+        </div>
+    </div>
+    
+        <a1>Sprite Work</a1>
+        <desc>Personal practice for game projects.</desc>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="sprite1.png" alt="Sprite 1" onclick="openModal('sprite1.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sprite2.png" alt="Sprite 2" onclick="openModal('sprite2.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sprite3.png" alt="Sprite 3" onclick="openModal('sprite3.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sprite4.png" alt="Sprite 4" onclick="openModal('sprite4.png')" />
+            </div>
+            <!-- More sprite work items -->
+        </div>
+    </div>
+    
+        <a1>Stickers</a1>
+        <desc>A select few of what I use in discord or print for sale.</desc>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="sticker1.png" alt="Sticker 1" onclick="openModal('sticker1.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sticker2.png" alt="Sticker 2" onclick="openModal('sticker2.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sticker3.png" alt="Sticker 3" onclick="openModal('sticker3.png')" />
+            </div>
+            <div class="gallery-item">
+                <img src="sticker4.png" alt="Sticker 4" onclick="openModal('sticker4.png')" />
+            </div>
+            <!-- More sticker items -->
+        </div>
+    </div>
+    <desc><br><br></desc>
+    
+    <!-- Modal for enlarged image -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" />
+    </div>
+<script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = 'flex'; // Show the modal
+            modalImage.src = imageSrc;   // Set the image source
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none'; // Hide the modal
+        }
+    </script>
+</body>
+</html>

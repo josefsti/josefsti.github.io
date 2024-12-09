@@ -1,0 +1,246 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Cubano';
+    src: url('./cubano.ttf') format('truetype'); /* Specify the font file and format */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('./ProximaNova-Regular.otf') format('opentype'); /* Specify the path and format for ProximaNova */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    animation: fadeIn 1.5s ease-in-out;
+    background-color: white;
+    height: 100vh;
+    background-image: url('bg4.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    font-family: 'Cubano', Verdana, sans-serif, Arial, sans-serif;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.sidebar {
+    font-family: 'ProximaNova', Arial, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: clamp(60px, 15vw, 200px);
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 100vh; 
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s ease; 
+    z-index: 10; 
+        transform: translateX(-100%);
+        animation: slideIn 1s ease-out forwards;
+}
+
+    @keyframes slideIn {
+        0% {
+            transform: translateX(-50%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .sidebar .social-media {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Style the social media icons */
+    .sidebar .social-media a {
+        color: #000; /* Set default color */
+        font-size: 2rem; /* Adjust size of icons */
+        margin: 10px 0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    /* Hover effect for icons */
+    .sidebar .social-media a:hover {
+        color: #0077b5; /* Change color on hover (e.g., LinkedIn blue) */
+    }
+    
+    /* Optional: Adjust size or positioning if necessary */
+    .sidebar .social-media a i {
+        transition: transform 0.3s ease;
+    }
+    
+.sidebar img {
+    width: 90%; 
+    max-width: 150px; 
+    border-radius: 25%; 
+    margin-bottom: 30px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; 
+}
+
+.sidebar img:hover {
+    transform: scale(1.1); 
+}
+
+
+.sidebar a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: clamp(14px, 1.5vw, 20px); 
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sidebar b {
+    font-family: 'Cubano', Verdana, sans-serif;
+    display: block;
+    color: black;
+    text-decoration: none;
+    font-size: clamp(16px, 1.5vw, 25px); 
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.sidebar a:hover {
+    color: rgb(0, 140, 255);
+}
+
+.content-container {
+    margin-left: clamp(100px, 15vw, 250px); 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    padding-left: 50px;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.content {
+    max-width: 50%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.content h1 {
+    color: white;
+    font-size: clamp(36px, 5vw, 80px);
+    text-align: left;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.content p {
+    color: white;
+    font-size: clamp(13px, 2vw, 25px);
+    line-height: 1.6;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6); 
+}
+
+.character-image {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transform: scale(0.25); /* Reduced scale for smaller size */
+    transform-origin: bottom right;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    animation: swayCharacter 3s ease-in-out infinite;
+}
+
+/* Media query for smaller screen sizes */
+@media (max-width: 768px) {
+    .character-image {
+        bottom: 5px; /* Adjust bottom position */
+        right: 5px; /* Adjust right position */
+        transform: scale(0.15); /* Scale the image down further */
+        max-width: 25vw; /* Constrain width to 25% of the viewport */
+        max-height: 25vh; /* Constrain height to 25% of the viewport */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .character-image {
+        bottom: 2px; /* Adjust for small screens */
+        right: 2px; /* Adjust for small screens */
+        transform: scale(0.1); /* Further reduce size */
+        max-width: 20vw; /* Max width 20% of the viewport */
+        max-height: 20vh; /* Max height 20% of the viewport */
+    }
+}
+
+@keyframes swayCharacter {
+    0% {
+        transform: translateY(0) scale(0.25); /* Ensure the scale matches */
+    }
+    50% {
+        transform: translateY(10px) scale(0.25); 
+    }
+    100% {
+        transform: translateY(0) scale(0.25); 
+    }
+}
+
+.character-imageshadow {
+    position: fixed;
+    top: auto;
+    bottom: 10px; 
+    right: 10px; 
+    transform: scale(0.25); /* Reduced scale for smaller size */
+    transform-origin: bottom right; 
+    z-index: -2; 
+    transition: opacity 0.5s ease; 
+    animation: swayCharactershadow 3s ease-in-out infinite; 
+    animation-delay: 0.50s; 
+}
+
+@keyframes swayCharactershadow {
+    0% {
+        transform: translateY(-10px) scale(0.25); /* Ensure the scale matches */
+    }
+    50% {
+        transform: translateY(20px) scale(0.25); 
+    }
+    100% {
+        transform: translateY(-10px) scale(0.25);
+    }
+}
+
+
+@media (max-width: 1300px) {
+    .character-image{
+        opacity: 0; 
+        pointer-events: none; 
+    }
+}
